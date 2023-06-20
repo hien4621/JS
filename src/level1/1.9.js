@@ -1,16 +1,19 @@
 /**
  * Write a program that takes a string as input and returns the number of words in the string.
  * ( tìm số từ trong một chuỗi, VD: “Hello world" => 2 )
- * @param {[]} arr 
- * @returns median number
+ * @param {string} str
+ * @returns number of words
  */
-function mediannum(arr) {
-    if (arr.length === 0) return -1;
-    else {
-        arr.sort((i, j) => (i - j));
-        middle = Math.floor(arr.length / 2);
-        if (arr.length % 2 !== 0) return arr[middle];
-        else return (arr[middle] + arr[middle - 1]) / 2;
+function numword(str) {
+    count = 0;
+    newstr=str.trim();
+    if (newstr!==''){
+    for (i = 0; i < newstr.length; i++) {
+        if (newstr[i] === ' ' && newstr[i + 1] !== ' ')
+            count += 1;
     }
+    if (newstr[newstr.length - 1] !==' ') count += 1;
+    return count;
+} else return count;
 }
-module.exports = mediannum;
+module.exports = numword;
