@@ -21,4 +21,8 @@ test('test 5', () => {
     const list = ['    ', 'hello   '];
     expect(longestcommon(list)).toEqual('   ');
 });
+test('test 6', () => {
+    const list = ['abcdef', 'bjhiuhcdef'];
+    expect(longestcommon(list)).toEqual('cdef');
+});
 
